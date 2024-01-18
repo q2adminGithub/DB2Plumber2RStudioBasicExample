@@ -1,0 +1,75 @@
+FROM rocker/rstudio
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+    curl \
+    file \
+    git \
+    pkg-config \
+    apt-utils \    
+    g++ \
+    libapparmor1 \
+    libclang-dev \
+    libcurl4-openssl-dev \
+    libedit2 \
+    libpq-dev \
+    libssl-dev \
+    libmagick++-dev \
+    libavfilter-dev \
+    libpoppler-cpp-dev \
+    libxslt1-dev \
+    libtesseract-dev \
+    tesseract-ocr-eng \
+    lsb-release \
+    psmisc \
+    procps \
+    python-setuptools \
+    sudo \
+    wget \
+    libudunits2-dev \  
+    libgdal-dev \
+  && BUILDDEPS="curl \
+    default-jdk \
+    libbz2-dev \
+    libcairo2-dev \
+    libcurl4-openssl-dev \
+    libpango1.0-dev \
+    libjpeg-dev \
+    libicu-dev \
+    libpcre3-dev \
+    libpng-dev \
+    libreadline-dev \
+    libtiff5-dev \
+    liblzma-dev \
+    libx11-dev \
+    libxml2-dev \
+    libxt-dev \
+    perl \
+    tcl8.6-dev \
+    tk8.6-dev \
+    x11proto-core-dev \
+    xauth \
+    xfonts-base \
+    xvfb \
+    zlib1g-dev" 
+
+# RUN git config --global user.name "DockerUser"
+
+# install pak alternatives to install.packages
+RUN Rscript -e "install.packages('pak', repos = sprintf('https://r-lib.github.io/p/pak/stable'))"
+RUN Rscript -e "pak::pak_update()"
+
+# install packages for plumber API
+## install latest plumber from github main branch
+RUN Rscript -e "pak::pkg_install('rstudio/plumber@main')"
+## install other R packages
+RUN Rscript -e "pak::pkg_install(c('logger','tictoc','fs','magrittr','yaml'))"
+RUN Rscript -e "pak::pkg_install(c('testthat','httr'))"
+
+# install other R packages
+RUN Rscript -e "pak::pkg_install(c('DBI','RPostgres','dbplyr','magrittr','yaml','pool'))"
+
+# RUN install2.r --error \
+#     --deps TRUE \
+#     DBI \
+#     RPostgres

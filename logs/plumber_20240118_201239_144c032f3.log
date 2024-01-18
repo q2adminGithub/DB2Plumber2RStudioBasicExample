@@ -1,0 +1,2 @@
+INFO [2024-01-18 20:12:39] 172.20.0.5 "libcurl/7.81.0 r-curl/5.2.0 httr/1.4.7" api:8000 GET /health-check 307 0.027
+INFO [2024-01-18 20:12:39] 172.20.0.5 "libcurl/7.81.0 r-curl/5.2.0 httr/1.4.7" api:8000 GET /health-check/ 200 0.027

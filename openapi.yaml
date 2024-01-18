@@ -1,0 +1,570 @@
+openapi: 3.0.3
+info:
+  description: API Description
+  title: API Title
+  version: 1.0.0
+paths:
+  /error:
+    get:
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          description: Default response.
+          content:
+            application/json:
+              schema:
+                type: object
+      parameters: []
+  /default-error:
+    get:
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          description: Default response.
+          content:
+            application/json:
+              schema:
+                type: object
+      parameters: []
+  /customFilter/enable/:
+    get:
+      summary: Endpoint with custom filter enabled
+      description: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          description: Default response.
+          content:
+            application/json:
+              schema:
+                type: object
+      parameters: []
+  /customFilter/enable/test:
+    get:
+      summary: Another Endpoint with custom filter enabled
+      description: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          description: Default response.
+          content:
+            application/json:
+              schema:
+                type: object
+      parameters: []
+  /data/validate:
+    post:
+      summary: Validate parameters
+      description: 'This is a test!'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          description: Default response.
+          content:
+            application/json:
+              schema:
+                type: object
+      parameters: []
+      requestBody:
+        description: Data
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                boolean:
+                  type: boolean
+                  title: "isBoolean"
+                  example: true
+                max_number:
+                  type: number
+                  title: "Number"
+                  example: 40
+                number_value:
+                  type: number
+                  title: "Number value"
+                  example: 123
+                in_array:
+                  type: string
+                  title: "in_array"
+                  example: "setosa"
+                formula:
+                  type: string
+                  title: "formula"
+                  example: "y ~ x1 + x2"
+                number_list:
+                  type: number
+                  title: "number_list"
+                  example: [1, 2, 3, 4]
+                with_null_list:
+                  title: "with_null_list"
+                  example: [1, null, 3, "hallo"]
+                data:
+                  title: "data"
+                  example: [
+                    {
+                      "columnA": 10,
+                      "columnB": 20
+                    },
+                    {
+                      "columnA": 30,
+                      "columnB": 40
+                    }
+                  ]
+  /route-A/:
+    get:
+      summary: Return a message
+      description: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          description: Default response.
+          content:
+            application/json:
+              schema:
+                type: object
+      parameters:
+      - name: msg
+        description: The message to echo
+        in: query
+        required: no
+        schema:
+          type: string
+          default: ''
+  /route-A/hello:
+    get:
+      summary: Return a hello message
+      description: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          description: Default response.
+          content:
+            application/json:
+              schema:
+                type: object
+      parameters:
+      - name: msg
+        in: query
+        required: no
+        schema:
+          type: string
+          default: ''
+  /route-B/:
+    get:
+      summary: Return a message
+      description: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          description: Default response.
+          content:
+            application/json:
+              schema:
+                type: object
+      parameters:
+      - name: msg
+        description: The message to echo
+        in: query
+        required: no
+        schema:
+          type: string
+          default: ''
+  /route-B/hello:
+    get:
+      summary: Return a hello message
+      description: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          description: Default response.
+          content:
+            application/json:
+              schema:
+                type: object
+      parameters:
+      - name: msg
+        in: query
+        required: no
+        schema:
+          type: string
+          default: ''
+  /subdir/route-A/:
+    get:
+      summary: Return a message
+      description: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          description: Default response.
+          content:
+            application/json:
+              schema:
+                type: object
+      parameters:
+      - name: msg
+        description: The message to echo
+        in: query
+        required: no
+        schema:
+          type: string
+          default: ''
+  /subdir/route-A/hello:
+    get:
+      summary: Return a hello message
+      description: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          description: Default response.
+          content:
+            application/json:
+              schema:
+                type: object
+      parameters:
+      - name: msg
+        in: query
+        required: no
+        schema:
+          type: string
+          default: ''
+  /db/dbconnect:
+    get:
+      summary: Connect to db
+      description: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          description: Default response.
+          content:
+            application/json:
+              schema:
+                type: object
+      parameters:
+      - name: dbname
+        in: query
+        required: yes
+        schema:
+          type: string
+          default: 'anomaly'
+      - name: host
+        in: query
+        required: yes
+        schema:
+          type: string
+          default: 'db'
+      - name: user
+        in: query
+        required: yes
+        schema:
+          type: string
+          default: 'rahul'
+      - name: password
+        in: query
+        required: yes
+        schema:
+          type: string
+          default: 'pass'
+      - name: port
+        in: query
+        required: yes
+        schema:
+          type: number
+          default: 5432
+  /db/dbisconnected:
+    get:
+      summary: Is db connection valid
+      description: 'Check if db connection is valid'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          description: Default response.
+          content:
+            application/json:
+              schema:
+                type: object
+      parameters: []
+  /db/dbcloseconnection:
+    get:
+      summary: Close db connection
+      description: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          description: Default response.
+          content:
+            application/json:
+              schema:
+                type: object
+      parameters: []
+  /db/dbgetTable:
+    get:
+      summary: Get data table
+      description: 'Get data table from DB connection'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          description: Default response.
+          content:
+            application/json:
+              schema:
+                type: object
+      parameters:
+      - name: name
+        in: query
+        required: yes
+        schema:
+          type: string
+          default: 'iris'
+  /db/dbpostTable:
+    post:
+      summary: Post data table
+      description: 'This is a test!'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          description: Default response.
+          content:
+            application/json:
+              schema:
+                type: object
+      parameters:
+      - name: name
+        in: query
+        required: yes
+        schema:
+          type: string
+          default: 'cars'
+      - name: overwrite
+        in: query
+        required: yes
+        schema:
+          type: boolean
+          default: TRUE
+      requestBody:
+        description: Data
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  title: "data"
+                  example: [
+                    {
+                      "speed": 4,
+                      "dist": 2
+                    },
+                    {
+                      "speed": 4,
+                      "dist": 10
+                    }
+                  ]
+  /db/dbRemoveTable:
+    get:
+      summary: Remove data table
+      description: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          description: Default response.
+          content:
+            application/json:
+              schema:
+                type: object
+      parameters:
+      - name: name
+        in: query
+        required: yes
+        schema:
+          type: string
+          default: 'cars'

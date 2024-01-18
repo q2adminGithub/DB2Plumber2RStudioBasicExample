@@ -1,0 +1,8 @@
+INFO [2024-01-17 16:53:16] 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" localhost:8000 GET /__docs__/ 200 0.003
+INFO [2024-01-17 16:53:17] 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" localhost:8000 GET /__docs__/swagger-ui.css 200 0.009
+INFO [2024-01-17 16:53:17] 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" localhost:8000 GET /__docs__/swagger-ui-standalone-preset.js 200 0.003
+INFO [2024-01-17 16:53:17] 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" localhost:8000 GET /__docs__/swagger-ui-bundle.js 200 0.001
+INFO [2024-01-17 16:53:17] 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" localhost:8000 GET /__docs__/swagger-ui.css 200 0.002
+INFO [2024-01-17 16:53:17] 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" localhost:8000 GET /__docs__/swagger-ui-standalone-preset.js 200 0.002
+INFO [2024-01-17 16:53:17] 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" localhost:8000 GET /__docs__/swagger-ui-bundle.js 200 0.002
+INFO [2024-01-17 16:53:17] 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" localhost:8000 GET /openapi.json 200 0.001

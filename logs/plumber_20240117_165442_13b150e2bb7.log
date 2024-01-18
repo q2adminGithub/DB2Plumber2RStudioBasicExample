@@ -1,0 +1,5 @@
+INFO [2024-01-17 16:54:42] 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" localhost:8000 GET /__docs__/ 200 0.004
+INFO [2024-01-17 16:54:42] 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" localhost:8000 GET /openapi.json 200 0.01
+ERROR [2024-01-17 16:54:56] TABLE cars IS NOT IN DB!
+ERROR [2024-01-17 16:54:56] R MESSAGE: argument "status" is missing, with no default
+INFO [2024-01-17 16:54:56] 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" localhost:8000 GET /db/dbRemoveTable 500 0.023

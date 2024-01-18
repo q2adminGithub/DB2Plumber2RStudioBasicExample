@@ -1,0 +1,7 @@
+INFO [2024-01-18 20:03:55] 172.19.0.5 "libcurl/7.81.0 r-curl/5.2.0 httr/1.4.7" api:8000 GET /health-check 307 0.026
+INFO [2024-01-18 20:03:55] 172.19.0.5 "libcurl/7.81.0 r-curl/5.2.0 httr/1.4.7" api:8000 GET /health-check/ 200 0.029
+INFO [2024-01-18 20:04:06] 192.168.65.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" 127.0.0.1:8000 GET /__docs__/ 200 0.004
+INFO [2024-01-18 20:04:06] 192.168.65.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" 127.0.0.1:8000 GET /openapi.json 200 0.002
+INFO [2024-01-18 20:04:16] 192.168.65.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" 127.0.0.1:8000 POST /data/validate 200 0.007
+INFO [2024-01-18 20:04:28] 192.168.65.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" 127.0.0.1:8000 GET /db/dbgetTable 200 0.127
+INFO [2024-01-18 20:04:35] 192.168.65.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" 127.0.0.1:8000 GET /db/dbgetTable 200 0.017

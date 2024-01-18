@@ -1,0 +1,84 @@
+version: "3.3"
+
+networks:
+  myNet:
+    name: myNet
+    # driver: bridge
+
+services:
+
+  db:
+    image: postgres:13.3
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: "anomaly"
+      POSTGRES_USER: "rahul"
+      POSTGRES_PASSWORD: "pass"
+    ports:
+      - "5432:5432"
+    networks:
+      - myNet
+    volumes:
+      - type: "bind"
+        source: "/Users/csc/Library/CloudStorage/OneDrive-q²methodsGmbH&Co.KG/rstudio/TransnetBW/PLANKTON/WebApp/Example/DB2Plumber2RStudio/postgres"
+        # source: "/Users/csc/Library/CloudStorage/OneDrive-q²methodsGmbH&Co.KG/Docker/DB/postgres"
+        # source: "/Users/csc/Library/CloudStorage/OneDrive\ -\ q²methods\ GmbH\ \\&\ Co.\ KG/Docker/DB/postgres"
+        target: "/var/lib/postgresql/data"
+  
+  api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.Plumber
+    container_name: r-plumber
+    command: app.R
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/app
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+    networks:
+      - myNet
+    depends_on:
+      - "db"
+  
+  rstudio:
+    # image: rocker/rstudio
+    # image: rstudio_db
+    build: 
+      context: .
+      dockerfile: ./Dockerfile.RStudio
+    ports:
+      - "8787:8787"
+      - "3838:3838"
+    networks:
+      - myNet
+    environment:
+      DISABLE_AUTH: "true"
+      ROOT: "true"
+      HOST: api
+      PORT: 8000
+    volumes:
+      - type: "bind"
+        source: "$HOME/Library/CloudStorage/OneDrive-q²methodsGmbH&Co.KG/rstudio"
+        target: "/home/rstudio"
+    depends_on:
+      - "db"
+  
+  test:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.Plumber
+    container_name: r-plumber-test
+    command: test.R
+    volumes:
+      - ./:/app
+    depends_on:
+      - api
+    environment:
+      - WAIT_TIME=5
+      - HOST=api
+      - PORT=8000
+    networks:
+      - myNet

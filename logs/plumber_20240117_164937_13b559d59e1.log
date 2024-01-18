@@ -1,0 +1,10 @@
+INFO [2024-01-17 16:49:37] 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" localhost:8000 GET /__docs__/ 200 0.004
+INFO [2024-01-17 16:49:37] 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" localhost:8000 GET /openapi.json 200 0.012
+INFO [2024-01-17 16:49:56] 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" localhost:8000 GET /db/dbgetTable 200 0.133
+INFO [2024-01-17 16:50:24] 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" localhost:8000 GET /db/dbgetRemoveTable 200 0.029
+INFO [2024-01-17 16:50:40] 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" localhost:8000 GET /db/dbgetTable 500 0.234
+ERROR [2024-01-17 16:50:52] TABLE cars IS NOT IN DB!
+ERROR [2024-01-17 16:50:52] R MESSAGE: Failed to prepare query : ERROR:  relation "cars" does not exist
+LINE 2: FROM "cars" AS "q01"
+             ^
+INFO [2024-01-17 16:50:52] 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" localhost:8000 GET /db/dbgetRemoveTable 500 0.014
