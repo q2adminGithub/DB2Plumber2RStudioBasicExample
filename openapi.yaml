@@ -482,7 +482,7 @@ paths:
         schema:
           type: string
           default: 'iris'
-  /db/dbpostTable:
+  /db/dbCreateTable:
     post:
       summary: Post data table
       description: 'This is a test!'
